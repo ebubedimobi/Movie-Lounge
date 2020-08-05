@@ -10,7 +10,7 @@ import Foundation
 
 struct Constants {
     static let cellIdentifier = "ReuseableCell"
-    
+    static let baseImageUrl = "https://image.tmdb.org/t/p/w500"
     
     struct Segue {
         static let discToInfo = "goToInfoFromDiscover"
