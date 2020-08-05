@@ -25,7 +25,7 @@ class FavouritesViewController: UIViewController {
 
 //MARK: - UICollectionViewDataSource Methods
 
-extension FavouritesViewController: UICollectionViewDataSource {
+extension FavouritesViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -37,3 +37,4 @@ extension FavouritesViewController: UICollectionViewDataSource {
         
     }
 }
+

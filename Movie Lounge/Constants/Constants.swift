@@ -10,4 +10,11 @@ import Foundation
 
 struct Constants {
     static let cellIdentifier = "ReuseableCell"
+    
+    
+    struct Segue {
+        static let discToInfo = "goToInfoFromDiscover"
+        static let favsToInfo = "goToInfoFromFavs"
+        static let searchToInfo = "goToInfoFromSearch"
+    }
 }

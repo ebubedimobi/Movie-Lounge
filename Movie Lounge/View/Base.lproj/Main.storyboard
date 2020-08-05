@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pu6-Oi-94n">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -86,11 +86,101 @@
                     <connections>
                         <outlet property="moviesCollectionView" destination="Bj2-Nk-IdN" id="NCm-94-CG2"/>
                         <outlet property="seriesCollectionView" destination="LWm-su-8tF" id="rU2-Ly-kwc"/>
+                        <segue destination="d7L-mj-ELw" kind="presentation" identifier="goToInfoFromDiscover" id="LTy-v7-lRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="137.94642857142856"/>
+        </scene>
+        <!--Information View Controller-->
+        <scene sceneID="eGj-U9-bPM">
+            <objects>
+                <viewController id="d7L-mj-ELw" customClass="InformationViewController" customModule="Movie_Lounge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jh5-YE-3p3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="4FD-MP-dUx">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="321"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eZ9-l6-4q1">
+                                <rect key="frame" x="302" y="383" width="34" height="31"/>
+                                <color key="tintColor" name="Star"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="Z7J-yk-qNP"/>
+                                    <constraint firstAttribute="height" constant="31" id="egG-xR-7M5"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpS-8M-Rvw">
+                                <rect key="frame" x="362.5" y="384" width="31.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrQ-Qf-cFu">
+                                <rect key="frame" x="20" y="482.5" width="374" height="317.5"/>
+                                <mutableString key="text">In Scooby-Doo’s greatest adventure yet, see the never-before told story of how lifelong friends Scooby and Shaggy first met and how they joined forces with young detectives Fred, Velma, and Daphne to form the famous Mystery Inc. Now, with hundreds of cases solved, Scooby and the gang face their biggest, toughest mystery ever: an evil plot to unleash the ghost dog Cerberus upon the world. As they race to stop this global “dogpocalypse,” the gang discovers that Scooby has a secret legacy and an epic destiny greater than anyone ever imagined</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izq-8L-qfY">
+                                <rect key="frame" x="20" y="419" width="374" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" name="Star"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ua-i2-FqH">
+                                <rect key="frame" x="20" y="385" width="277" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvc-fv-3Q6">
+                                <rect key="frame" x="20" y="326" width="47" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="fEF-dR-iGt"/>
+                                    <constraint firstAttribute="width" constant="47" id="fQv-Yd-7Vu"/>
+                                </constraints>
+                                <color key="tintColor" name="Star"/>
+                                <state key="normal" image="heart" catalog="system"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ad Astra" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTp-iM-L7c">
+                                <rect key="frame" x="75" y="337.5" width="319" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="ImageColor"/>
+                        <constraints>
+                            <constraint firstItem="izq-8L-qfY" firstAttribute="top" secondItem="HpS-8M-Rvw" secondAttribute="bottom" constant="5" id="2kj-os-Lxj"/>
+                            <constraint firstItem="izq-8L-qfY" firstAttribute="leading" secondItem="t9o-2c-7X3" secondAttribute="leading" constant="20" id="6eA-YB-Q3W"/>
+                            <constraint firstItem="1Ua-i2-FqH" firstAttribute="leading" secondItem="t9o-2c-7X3" secondAttribute="leading" constant="20" id="9Qv-Z3-c95"/>
+                            <constraint firstItem="1Ua-i2-FqH" firstAttribute="top" secondItem="cvc-fv-3Q6" secondAttribute="bottom" constant="10" id="9hM-E7-eEm"/>
+                            <constraint firstItem="t9o-2c-7X3" firstAttribute="bottom" secondItem="ZrQ-Qf-cFu" secondAttribute="bottom" constant="8" id="A5N-xV-mRr"/>
+                            <constraint firstItem="t9o-2c-7X3" firstAttribute="trailing" secondItem="ZrQ-Qf-cFu" secondAttribute="trailing" constant="20" id="H1J-4M-F9S"/>
+                            <constraint firstItem="t9o-2c-7X3" firstAttribute="trailing" secondItem="HpS-8M-Rvw" secondAttribute="trailing" constant="20" id="NAA-QH-JNh"/>
+                            <constraint firstItem="t9o-2c-7X3" firstAttribute="trailing" secondItem="eTp-iM-L7c" secondAttribute="trailing" constant="20" id="PDZ-D5-Hmd"/>
+                            <constraint firstItem="1Ua-i2-FqH" firstAttribute="top" secondItem="eTp-iM-L7c" secondAttribute="bottom" constant="20" id="QT7-1V-Zok"/>
+                            <constraint firstItem="eZ9-l6-4q1" firstAttribute="leading" secondItem="1Ua-i2-FqH" secondAttribute="trailing" constant="5" id="dmp-Eo-2uP"/>
+                            <constraint firstItem="HpS-8M-Rvw" firstAttribute="leading" secondItem="eZ9-l6-4q1" secondAttribute="trailing" constant="26.5" id="g6Y-zN-Yhv"/>
+                            <constraint firstItem="t9o-2c-7X3" firstAttribute="trailing" secondItem="izq-8L-qfY" secondAttribute="trailing" constant="20" id="gY2-CM-oT7"/>
+                            <constraint firstItem="ZrQ-Qf-cFu" firstAttribute="top" secondItem="izq-8L-qfY" secondAttribute="bottom" constant="30" id="kcy-pA-2Zg"/>
+                            <constraint firstItem="eTp-iM-L7c" firstAttribute="leading" secondItem="cvc-fv-3Q6" secondAttribute="trailing" constant="8" id="kzg-ij-Z73"/>
+                            <constraint firstItem="izq-8L-qfY" firstAttribute="top" secondItem="eZ9-l6-4q1" secondAttribute="bottom" constant="5" id="qFh-Bn-FoL"/>
+                            <constraint firstItem="cvc-fv-3Q6" firstAttribute="leading" secondItem="t9o-2c-7X3" secondAttribute="leading" constant="20" id="wzz-HF-qus"/>
+                            <constraint firstItem="ZrQ-Qf-cFu" firstAttribute="leading" secondItem="t9o-2c-7X3" secondAttribute="leading" constant="20" id="xpq-74-eUH"/>
+                            <constraint firstItem="izq-8L-qfY" firstAttribute="top" secondItem="1Ua-i2-FqH" secondAttribute="bottom" constant="5" id="ztq-4V-5Vj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="t9o-2c-7X3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DB7-P7-oVJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3130.434782608696" y="151.33928571428569"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DYs-B6-Hkg">
@@ -123,7 +213,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="sHC-Ao-p7T">
-                                <rect key="frame" x="0.0" y="140" width="508" height="56"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="XdU-79-ghX" id="Xsu-uZ-lbc"/>
@@ -160,6 +250,7 @@
                     <navigationItem key="navigationItem" title="Search Movies" id="yDI-Mk-RmG"/>
                     <connections>
                         <outlet property="collectionView" destination="I1c-b7-Tct" id="1LP-SP-Ich"/>
+                        <segue destination="d7L-mj-ELw" kind="presentation" identifier="goToInfoFromSearch" id="iHE-1u-PQH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0cp-yD-c5y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -175,7 +266,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Pd2-EW-Zrt">
-                                <rect key="frame" x="0.0" y="140" width="508" height="56"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="nnD-hj-PmU" id="XG6-uf-SIS"/>
@@ -212,6 +303,7 @@
                     <navigationItem key="navigationItem" title="Favourites" id="364-ug-YuW"/>
                     <connections>
                         <outlet property="collectionView" destination="kzG-wq-xUa" id="kQn-Ga-AyA"/>
+                        <segue destination="d7L-mj-ELw" kind="presentation" identifier="goToInfoFromFavs" id="Ii5-xD-Vs6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UeV-rv-Xeb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -277,12 +369,20 @@
             <point key="canvasLocation" x="1957.9710144927537" y="953.57142857142856"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="iHE-1u-PQH"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="safari" catalog="system" width="128" height="121"/>
         <image name="safari.fill" catalog="system" width="128" height="121"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="test" width="500" height="750"/>
+        <namedColor name="ImageColor">
+            <color red="0.88999998569488525" green="0.875" blue="0.7839999794960022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Star">
             <color red="0.72500002384185791" green="0.52399998903274536" blue="0.046000000089406967" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
