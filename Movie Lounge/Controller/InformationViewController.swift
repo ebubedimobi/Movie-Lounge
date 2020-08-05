@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  InformationViewController.swift
 //  Movie Lounge
 //
 //  Created by Ebubechukwu Dimobi on 05.08.2020.
@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class InformationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
+    
 
+    
 
 }
-
