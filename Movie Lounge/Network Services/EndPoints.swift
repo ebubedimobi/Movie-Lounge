@@ -9,7 +9,7 @@
 import Foundation
 
 struct EndPoints {
-
+    
     struct SearchMovies {
         static let topUrl = "https://api.themoviedb.org/3/search/movie?api_key="
         static let endUrl = "&query="
@@ -24,7 +24,4 @@ struct EndPoints {
     struct discoverSeries {
         static let baseUrl = "https://api.themoviedb.org/3/tv/popular?api_key="
     }
-
-    
-    
 }

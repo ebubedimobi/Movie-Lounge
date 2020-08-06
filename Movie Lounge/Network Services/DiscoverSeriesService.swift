@@ -12,7 +12,6 @@ import RxSwift
 
 struct DiscoverSeriesService {
     
-    
     func fetchSeries()-> Observable<SeriesData>{
         
         return Observable.create { (observer) -> Disposable in

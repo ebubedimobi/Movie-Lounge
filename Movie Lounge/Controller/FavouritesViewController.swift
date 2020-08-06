@@ -61,7 +61,6 @@ extension FavouritesViewController: UICollectionViewDataSource{
             cell.image.kf.indicatorType = .activity
             cell.image.kf.setImage(
                 with: imageUrl,
-                //placeholder: UIImage(named: "logo"),
                 options: [
                     .scaleFactor(UIScreen.main.scale),
                     .transition(.fade(0.5)),
@@ -97,24 +96,24 @@ extension FavouritesViewController: UISearchBarDelegate{
     }
     
     //starts searching once person starts typing
-     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-         collectionView.reloadData()
-         if searchBar.text?.count == 0{
-             
-             DispatchQueue.main.async {
-                 searchBar.resignFirstResponder()
-             }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        collectionView.reloadData()
+        if searchBar.text?.count == 0{
+            
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
             loadDataFromCache()
-         }
-//         else {
-//             
-//            favouriteMovies = favouriteMovies?.filter("title CONTAINS[cd]  %@", searchBar.text!).sorted(byKeyPath: "title", ascending: true)
-//             
-//             collectionView.reloadData()
-//         }
-     }
+        }
+        //         else {
+        //
+        //            favouriteMovies = favouriteMovies?.filter("title CONTAINS[cd]  %@", searchBar.text!).sorted(byKeyPath: "title", ascending: true)
+        //
+        //             collectionView.reloadData()
+        //         }
+    }
     
-
+    
 }
 
 

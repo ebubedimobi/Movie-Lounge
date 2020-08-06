@@ -110,6 +110,19 @@ extension SearchViewController: UISearchBarDelegate{
         }
     }
     
+    //starts searching once person starts typing
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        collectionView.reloadData()
+        if searchBar.text?.count == 0{
+            
+            DispatchQueue.main.async {
+                self.moviesData = nil
+                self.collectionView.reloadData()
+            }
+            
+        }
+    }
+    
     private func removeSpaces(in item: String)->String{
         let array = item.components(separatedBy: " ")
         var result = String()

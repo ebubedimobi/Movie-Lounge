@@ -9,11 +9,7 @@
 import Foundation
 import RxSwift
 
-
-
-
 struct SearchMoviesService {
-    
     
     func fetchMovies(with movieName: String)-> Observable<MoviesData>{
         
