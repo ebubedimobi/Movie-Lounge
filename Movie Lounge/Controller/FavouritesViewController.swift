@@ -22,7 +22,6 @@ class FavouritesViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        print("view Appeared")
         removeKeyBoard()
         loadDataFromCache()
     }
