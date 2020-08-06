@@ -17,112 +17,110 @@ class InformationViewController: UIViewController {
     @IBOutlet weak var movieRating: UILabel!
     @IBOutlet weak var overview: UILabel!
     
-    var borrowedCollectionView: UICollectionView?
-    
-    var informationData: InformationData?
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        loadData()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        loadData()
+  var borrowedCollectionView: UICollectionView?
         
-    }
-    
-    @IBAction func likeButtonPressed(_ sender: UIButton) {
+        var informationData: InformationData?
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            loadData()
+        }
         
-        let favouritesCacheManager = FavouritesCacheManager()
+        override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(true)
+            loadData()
+            
+        }
         
-        if informationData?.isSaved == false{
-            //save
-            if informationData != nil{
-                let check = favouritesCacheManager.recieveDataToSave(with: informationData!)
-                borrowedCollectionView?.reloadData()
-                handleCheck(with: check)
+        
+        
+        func loadData(){
+            movieName.text = informationData?.title
+            movieYear.text = setYear(with: informationData?.release_date)
+            movieRating.text = String(informationData?.vote_average ?? 0)
+            overview.text = informationData?.overview
+            setImage()
+            setHeart()
+            
+            
+        }
+        
+        
+        func setYear(with date: String?) -> String? {
+            
+            let array = date?.components(separatedBy: "-")
+            return array?[0]
+            
+            
+        }
+        func setHeart(){
+            let favouritesCacheManager = FavouritesCacheManager()
+            
+            if let id = informationData?.id{
+                
+                if favouritesCacheManager.checkIFInFavourites(with: id){
+                    
+                    likeButtonOutlet.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                    informationData?.isSaved = true
+                }else{
+                    likeButtonOutlet.setImage(UIImage(systemName: "heart"), for: .normal)
+                    informationData?.isSaved = false
+                }
             }
             
-        }else{
-            //delete
-            delete()
-            borrowedCollectionView?.reloadData()
+        }
+        
+        
+        
+        @IBAction func likeButtonPressed(_ sender: UIButton) {
+            
+            let favouritesCacheManager = FavouritesCacheManager()
+            
+            if informationData?.isSaved == false{
+                //save
+                if informationData != nil{
+                    let check = favouritesCacheManager.recieveDataToSave(with: informationData!)
+                    borrowedCollectionView?.reloadData()
+                    handleCheck(with: check)
+                }
+                
+            }else{
+                //delete
+                delete()
+                borrowedCollectionView?.reloadData()
+                
+            }
             
         }
         
-    }
-    
-    func handleCheck(with check: Bool){
-        if check{
-            informationData?.isSaved = true
-            setHeartButton()
-        }else{
-            presentAlert("Already in Favourites", message: "")
+        func handleCheck(with check: Bool){
+            if check{
+                informationData?.isSaved = true
+                setHeart()
+            }
         }
         
-        
-    }
-    
-    func delete(){
-        let favouritesCacheManager = FavouritesCacheManager()
-        if informationData != nil{
-            favouritesCacheManager.recieveDataToDelete(with: informationData!)
-            informationData?.isSaved = false
-            setHeartButton()
+        func delete(){
+            let favouritesCacheManager = FavouritesCacheManager()
+            if informationData != nil{
+                favouritesCacheManager.recieveDataToDelete(with: informationData!)
+                informationData?.isSaved = false
+                setHeart()
+            }
         }
-    }
-    
-    func loadData(){
-        movieName.text = informationData?.title
-        movieYear.text = setYear(with: informationData?.release_date)
-        movieRating.text = String(informationData?.vote_average ?? 0)
-        overview.text = informationData?.overview
-        setImage()
-        setHeartButton()
         
-        
-        
-    }
-    
-    func setHeartButton(){
-        if informationData?.isSaved ?? false{
-            likeButtonOutlet.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        func setImage(){
             
-        }else{
-            likeButtonOutlet.setImage(UIImage(systemName: "heart"), for: .normal)
-        }
-    }
-    
-    
-    func setYear(with date: String?) -> String? {
-        
-        let array = date?.components(separatedBy: "-")
-        return array?[0]
-        
-        
-    }
-    
-    func setImage(){
-        
-        if let imageUrl = URL(string: Constants.baseImageUrl + (self.informationData?.poster_path ?? "")  ){
-            imageCover.kf.indicatorType = .activity
-            imageCover.kf.setImage(
-                with: imageUrl,
-                options: [
-                    .scaleFactor(UIScreen.main.scale),
-                    .transition(.fade(0.5)),
-                    .cacheOriginalImage
-            ])
+            if let imageUrl = URL(string: Constants.baseImageUrl + (self.informationData?.poster_path ?? "")  ){
+                imageCover.kf.indicatorType = .activity
+                imageCover.kf.setImage(
+                    with: imageUrl,
+                    options: [
+                        .scaleFactor(UIScreen.main.scale),
+                        .transition(.fade(0.5)),
+                        .cacheOriginalImage
+                ])
+                
+            }
             
         }
-        
     }
-    
-    private func presentAlert(_ title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
-    
-    
-}
