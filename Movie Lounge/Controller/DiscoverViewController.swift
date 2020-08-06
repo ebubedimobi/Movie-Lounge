@@ -22,7 +22,7 @@ class DiscoverViewController: UIViewController {
     
     
     override func viewDidLoad() {
-      loadDataFromCache()
+        loadDataFromCache()
         
         seriesCollectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: Constants.cellIdentifier)
         
@@ -42,7 +42,7 @@ class DiscoverViewController: UIViewController {
     private func GetData(){
         
         let discoverMoviesService = DiscoverMoviesService()
-            discoverMoviesService.fetchMovies().observeOn(MainScheduler.instance).subscribe(onNext: { movies in
+        discoverMoviesService.fetchMovies().observeOn(MainScheduler.instance).subscribe(onNext: { movies in
             self.loadDataFromCache()
         }).disposed(by: disposeBag)
         
@@ -161,12 +161,6 @@ extension DiscoverViewController{
     
     
 }
-
-
-
-
-
-
 
 
 

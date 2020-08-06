@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pu6-Oi-94n">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="DiscoverViewController" customModule="Movie_Lounge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trending Series" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6S-gk-34s">
@@ -23,7 +23,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LWm-su-8tF">
-                                <rect key="frame" x="0.0" y="188" width="375" height="220"/>
+                                <rect key="frame" x="0.0" y="188" width="414" height="220"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="d8x-eb-Cqx"/>
@@ -41,13 +41,13 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trending Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4V9-F1-yE3">
-                                <rect key="frame" x="20" y="416" width="355" height="29"/>
+                                <rect key="frame" x="20" y="416" width="394" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" name="Star"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Bj2-Nk-IdN">
-                                <rect key="frame" x="7" y="447" width="361" height="282"/>
+                                <rect key="frame" x="7" y="447" width="400" height="366"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="yFd-zY-6Du">
                                     <size key="itemSize" width="190" height="244"/>
@@ -102,17 +102,17 @@
             <objects>
                 <viewController id="d7L-mj-ELw" customClass="InformationViewController" customModule="Movie_Lounge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jh5-YE-3p3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4FD-MP-dUx">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="321"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="321"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="321" id="N8W-CI-oJA"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eZ9-l6-4q1">
-                                <rect key="frame" x="263" y="383.33333333333331" width="34" height="30.666666666666686"/>
+                                <rect key="frame" x="302.33333333333331" y="383.66666666666663" width="34" height="30.666666666666686"/>
                                 <color key="tintColor" name="Star"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="T1G-mZ-hd4"/>
@@ -120,26 +120,26 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpS-8M-Rvw">
-                                <rect key="frame" x="323.66666666666669" y="384" width="31.333333333333314" height="30"/>
+                                <rect key="frame" x="362.66666666666669" y="384.33333333333331" width="31.333333333333314" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZrQ-Qf-cFu">
-                                <rect key="frame" x="20" y="472.66666666666674" width="335" height="363"/>
+                                <rect key="frame" x="20" y="473" width="374" height="317.66666666666674"/>
                                 <string key="text">In Scooby-Doo’s greatest adventure yet, see the never-before told story of how lifelong friends Scooby and Shaggy first met and how they joined forces with young detectives Fred, Velma, and Daphne to form the famous Mystery Inc. Now, with hundreds of cases solved, Scooby and the gang face their biggest, toughest mystery ever: an evil plot to unleash the ghost dog Cerberus upon the world. As they race to stop this global “dogpocalypse,” the gang discovers that Scooby has a secret legacy and an epic destiny greater than anyone ever imagined</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izq-8L-qfY">
-                                <rect key="frame" x="20" y="419" width="335" height="33.666666666666686"/>
+                                <rect key="frame" x="20" y="419.33333333333331" width="374" height="33.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" name="Star"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ua-i2-FqH">
-                                <rect key="frame" x="20" y="385" width="238" height="29"/>
+                                <rect key="frame" x="20" y="385" width="277.33333333333331" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -156,8 +156,8 @@
                                     <action selector="likeButtonPressed:" destination="d7L-mj-ELw" eventType="touchUpInside" id="NWD-jS-PgY"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ad Astra" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTp-iM-L7c">
-                                <rect key="frame" x="75" y="337.66666666666669" width="292" height="27.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ad Astra" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTp-iM-L7c">
+                                <rect key="frame" x="75" y="337.66666666666669" width="331" height="27.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -175,7 +175,7 @@
                             <constraint firstItem="1Ua-i2-FqH" firstAttribute="leading" secondItem="t9o-2c-7X3" secondAttribute="leading" constant="20" id="KXa-1x-STQ"/>
                             <constraint firstItem="izq-8L-qfY" firstAttribute="top" secondItem="eZ9-l6-4q1" secondAttribute="bottom" constant="5" id="MKS-Sz-hSQ"/>
                             <constraint firstItem="eZ9-l6-4q1" firstAttribute="top" secondItem="eTp-iM-L7c" secondAttribute="bottom" constant="18" id="RXI-8R-eY2"/>
-                            <constraint firstItem="1Ua-i2-FqH" firstAttribute="top" secondItem="cvc-fv-3Q6" secondAttribute="bottom" constant="10" id="ScI-if-ixK"/>
+                            <constraint firstItem="1Ua-i2-FqH" firstAttribute="top" secondItem="eTp-iM-L7c" secondAttribute="bottom" constant="19.666666666666629" id="ScI-if-ixK"/>
                             <constraint firstItem="izq-8L-qfY" firstAttribute="leading" secondItem="t9o-2c-7X3" secondAttribute="leading" constant="20" id="Tia-PI-ncb"/>
                             <constraint firstItem="cvc-fv-3Q6" firstAttribute="leading" secondItem="t9o-2c-7X3" secondAttribute="leading" constant="20" id="VtA-s6-bXl"/>
                             <constraint firstItem="t9o-2c-7X3" firstAttribute="trailing" secondItem="eTp-iM-L7c" secondAttribute="trailing" constant="8" id="YmW-W4-q9T"/>
@@ -232,18 +232,18 @@
             <objects>
                 <viewController id="XdU-79-ghX" customClass="SearchViewController" customModule="Movie_Lounge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y4E-sR-g5e">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="sHC-Ao-p7T">
-                                <rect key="frame" x="0.0" y="140" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="XdU-79-ghX" id="Xsu-uZ-lbc"/>
                                 </connections>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="I1c-b7-Tct">
-                                <rect key="frame" x="0.0" y="196" width="375" height="533"/>
+                                <rect key="frame" x="7" y="196" width="400" height="617"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jgj-C1-aR8">
                                     <size key="itemSize" width="190" height="244"/>
@@ -260,9 +260,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Q3p-fl-DF3" firstAttribute="trailing" secondItem="I1c-b7-Tct" secondAttribute="trailing" id="EAi-Zx-qnq"/>
+                            <constraint firstItem="Q3p-fl-DF3" firstAttribute="trailing" secondItem="I1c-b7-Tct" secondAttribute="trailing" constant="7" id="EAi-Zx-qnq"/>
                             <constraint firstItem="sHC-Ao-p7T" firstAttribute="trailing" secondItem="Q3p-fl-DF3" secondAttribute="trailing" id="LaK-Wu-fag"/>
-                            <constraint firstItem="I1c-b7-Tct" firstAttribute="leading" secondItem="Q3p-fl-DF3" secondAttribute="leading" id="Ugr-Oa-P2M"/>
+                            <constraint firstItem="I1c-b7-Tct" firstAttribute="leading" secondItem="Q3p-fl-DF3" secondAttribute="leading" constant="7" id="Ugr-Oa-P2M"/>
                             <constraint firstItem="sHC-Ao-p7T" firstAttribute="top" secondItem="Q3p-fl-DF3" secondAttribute="top" id="X2A-mw-5IR"/>
                             <constraint firstItem="I1c-b7-Tct" firstAttribute="top" secondItem="sHC-Ao-p7T" secondAttribute="bottom" id="bWg-Kp-bUv"/>
                             <constraint firstItem="Q3p-fl-DF3" firstAttribute="bottom" secondItem="I1c-b7-Tct" secondAttribute="bottom" id="qUn-KD-FgD"/>
@@ -285,18 +285,18 @@
             <objects>
                 <viewController id="nnD-hj-PmU" customClass="FavouritesViewController" customModule="Movie_Lounge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OCk-fb-JR7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Pd2-EW-Zrt">
-                                <rect key="frame" x="0.0" y="140" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="nnD-hj-PmU" id="XG6-uf-SIS"/>
                                 </connections>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kzG-wq-xUa">
-                                <rect key="frame" x="0.0" y="196" width="375" height="533"/>
+                                <rect key="frame" x="10" y="196" width="397" height="617"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ykQ-bx-DMo">
                                     <size key="itemSize" width="190" height="244"/>
@@ -316,8 +316,8 @@
                             <constraint firstItem="kzG-wq-xUa" firstAttribute="bottom" secondItem="ZmO-En-aWf" secondAttribute="bottom" id="Jnp-1k-yxO"/>
                             <constraint firstItem="Pd2-EW-Zrt" firstAttribute="top" secondItem="ZmO-En-aWf" secondAttribute="top" id="NmE-DH-yiI"/>
                             <constraint firstItem="kzG-wq-xUa" firstAttribute="top" secondItem="Pd2-EW-Zrt" secondAttribute="bottom" id="Ox6-yU-SQY"/>
-                            <constraint firstItem="kzG-wq-xUa" firstAttribute="leading" secondItem="ZmO-En-aWf" secondAttribute="leading" id="QyU-kg-fD3"/>
-                            <constraint firstItem="kzG-wq-xUa" firstAttribute="trailing" secondItem="ZmO-En-aWf" secondAttribute="trailing" id="evG-RX-x7c"/>
+                            <constraint firstItem="kzG-wq-xUa" firstAttribute="leading" secondItem="ZmO-En-aWf" secondAttribute="leading" constant="10" id="QyU-kg-fD3"/>
+                            <constraint firstItem="kzG-wq-xUa" firstAttribute="trailing" secondItem="ZmO-En-aWf" secondAttribute="trailing" constant="-7" id="evG-RX-x7c"/>
                             <constraint firstItem="Pd2-EW-Zrt" firstAttribute="leading" secondItem="ZmO-En-aWf" secondAttribute="leading" id="eyv-aH-66o"/>
                             <constraint firstItem="Pd2-EW-Zrt" firstAttribute="trailing" secondItem="ZmO-En-aWf" secondAttribute="trailing" id="iwH-wS-F8U"/>
                         </constraints>
@@ -341,7 +341,7 @@
                     <tabBarItem key="tabBarItem" title="Discover" image="safari" catalog="system" selectedImage="safari.fill" id="lz1-GL-Gdr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="kSg-66-XGh">
-                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="Star"/>
                     </navigationBar>
@@ -361,7 +361,7 @@
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="LQ7-Aq-HYl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="62E-wY-dcc">
-                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" name="Star"/>
@@ -386,7 +386,7 @@
                     <tabBarItem key="tabBarItem" title="Favourites" image="heart" catalog="system" selectedImage="heart.fill" id="biw-JS-fCC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="mqj-P9-X3G">
-                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" name="Star"/>
@@ -403,7 +403,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LTy-v7-lRS"/>
+        <segue reference="Ii5-xD-Vs6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
