@@ -10,59 +10,57 @@ import Foundation
 import RxSwift
 
 struct DiscoverMoviesService {
-   
+    
     func fetchMovies()-> Observable<MoviesData>{
         
         return Observable.create { (observer) -> Disposable in
-            
-            let completeQueryURL = EndPoints.discoverMovies.baseUrl + Keys.clientID
-            
-            
-            if let url = URL(string: completeQueryURL){
-                
-                let session = URLSession(configuration: .default)
-                let task = session.dataTask(with: url) { (data, response, error) in
+                let completeQueryURL = EndPoints.discoverMovies.baseUrl + Keys.clientID
+
+                if let url = URL(string: completeQueryURL){
                     
-                    if error != nil{
-                        print("Newtwork Problem \(error!)")
-                        observer.onError(error!)
-                        return
-                    }
-                    
-                    if let safeData = data{
+                    let session = URLSession(configuration: .default)
+                    let task = session.dataTask(with: url) { (data, response, error) in
                         
-                        let decoder = JSONDecoder()
-                        
-                        do{
-                            
-                            let decodedMoviesData = try decoder.decode(MoviesData.self, from: safeData)
-                            let moviesCacheManager = MoviesCacheManager()
-                            moviesCacheManager.recieveData(with: decodedMoviesData)
-                            observer.onNext(decodedMoviesData)
-                            
-                        }catch{
-                            
-                            print("could not parse Json---\(error)")
-                            observer.onError(error)
+                        if error != nil{
+                            print("Newtwork Problem \(error!)")
+                            observer.onError(error!)
+                            return
                         }
                         
-                    }else {
-                        print("Data is empty")
-                        observer.onError(NSError(domain: "Data is empty", code: -1, userInfo: nil))
+                        if let safeData = data{
+                            
+                            let decoder = JSONDecoder()
+                            
+                            do{
+                                
+                                let decodedMoviesData = try decoder.decode(MoviesData.self, from: safeData)
+                                let moviesCacheManager = MoviesCacheManager()
+                                moviesCacheManager.recieveData(with: decodedMoviesData)
+                                observer.onNext(decodedMoviesData)
+                                
+                            }catch{
+                                
+                                print("could not parse Json---\(error)")
+                                observer.onError(error)
+                            }
+                            
+                        }else {
+                            print("Data is empty")
+                            observer.onError(NSError(domain: "Data is empty", code: -1, userInfo: nil))
+                        }
+                    }
+                    task.resume()
+                    
+                    return Disposables.create {
+                        task.cancel()
                     }
                 }
-                task.resume()
                 
-                return Disposables.create {
-                    task.cancel()
-                }
-            }
-            
+                
+
             return Disposables.create { }
         }
         
     }
-    
-    
 }
 

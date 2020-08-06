@@ -18,6 +18,7 @@ struct EndPoints {
     
     struct discoverMovies{
         static let baseUrl = "https://api.themoviedb.org/3/movie/popular?api_key="
+        static let endUrl = "&page="
     }
     
     struct discoverSeries {

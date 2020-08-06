@@ -22,7 +22,7 @@ class DiscoverViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+      loadDataFromCache()
         
         seriesCollectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: Constants.cellIdentifier)
         
@@ -36,10 +36,13 @@ class DiscoverViewController: UIViewController {
         
     }
     
-    func GetData(){
+    @IBAction func refreshButtonPressed(_ sender: UIBarButtonItem) {
+        self.GetData()
+    }
+    private func GetData(){
         
         let discoverMoviesService = DiscoverMoviesService()
-        discoverMoviesService.fetchMovies().observeOn(MainScheduler.instance).subscribe(onNext: { movies in
+            discoverMoviesService.fetchMovies().observeOn(MainScheduler.instance).subscribe(onNext: { movies in
             self.loadDataFromCache()
         }).disposed(by: disposeBag)
         
@@ -50,7 +53,7 @@ class DiscoverViewController: UIViewController {
         
     }
     
-    func loadDataFromCache(){
+    private func loadDataFromCache(){
         self.trendingMovies = realm.objects(MoviesCacheData.self)
         self.trendingSeries = realm.objects(SeriesCacheData.self)
         seriesCollectionView.reloadData()
@@ -116,10 +119,50 @@ extension DiscoverViewController: UICollectionViewDataSource {
         }
         
     }
+}
+
+//MARK: - UICollectionViewDelegate Methods
+extension DiscoverViewController: UICollectionViewDelegate{
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: Constants.Segue.discToInfo, sender: self)
+        
+    }
+    
+}
+
+//MARK: - Segues and Navigation
+extension DiscoverViewController{
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.Segue.discToInfo{
+            
+            if seriesCollectionView.indexPathsForSelectedItems?.count != 0{
+                let InfoVc = segue.destination as! InformationViewController
+                if let index = seriesCollectionView.indexPathsForSelectedItems?[0].row, let movie = trendingSeries?[index]{
+                    let infoData = InformationData(id: movie.id, vote_average: movie.vote_average, title: movie.title, release_date: movie.release_date, overview: movie.overview, poster_path: movie.poster_path, isSaved: false, saveLocation: nil)
+                    
+                    InfoVc.informationData = infoData
+                    seriesCollectionView.deselectItem(at: (seriesCollectionView.indexPathsForSelectedItems?[0])!, animated: true)
+                }
+                
+            }else{
+                let InfoVc = segue.destination as! InformationViewController
+                if let index = moviesCollectionView.indexPathsForSelectedItems?[0].row, let movie = trendingMovies?[index]{
+                    let infoData = InformationData(id: movie.id, vote_average: movie.vote_average, title: movie.title, release_date: movie.release_date, overview: movie.overview, poster_path: movie.poster_path, isSaved: false, saveLocation: nil)
+                    
+                    InfoVc.informationData = infoData
+                    seriesCollectionView.deselectItem(at: (moviesCollectionView.indexPathsForSelectedItems?[0])!, animated: true)
+                    
+                }
+            }
+        }
+    }
     
     
 }
+
+
 
 
 

@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,9 +13,38 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Vr-Cd-l0a">
+                                <rect key="frame" x="122" y="334.5" width="170.5" height="227.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Lounge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yX7-gh-B1Q">
+                                        <rect key="frame" x="-25.5" y="186.5" width="221" height="41"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                        <color key="textColor" name="Star"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Bz2-3v-GYq">
+                                        <rect key="frame" x="0.0" y="0.0" width="170.5" height="170.5"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="yX7-gh-B1Q" firstAttribute="top" secondItem="Bz2-3v-GYq" secondAttribute="bottom" constant="16" id="2u1-S6-t0N"/>
+                                    <constraint firstItem="yX7-gh-B1Q" firstAttribute="centerX" secondItem="Bz2-3v-GYq" secondAttribute="centerX" id="7KQ-Mw-waH"/>
+                                    <constraint firstItem="Bz2-3v-GYq" firstAttribute="leading" secondItem="5Vr-Cd-l0a" secondAttribute="leading" id="VIy-XM-uv2"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bz2-3v-GYq" secondAttribute="trailing" id="fVg-ph-Hdf"/>
+                                    <constraint firstItem="Bz2-3v-GYq" firstAttribute="top" secondItem="5Vr-Cd-l0a" secondAttribute="top" id="lR6-ZK-GIF"/>
+                                    <constraint firstAttribute="bottom" secondItem="yX7-gh-B1Q" secondAttribute="bottom" id="xee-gq-mqx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5Vr-Cd-l0a" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="bVq-bT-xjS"/>
+                            <constraint firstItem="5Vr-Cd-l0a" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="dLd-RT-KeK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -22,4 +53,10 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="170.5" height="170.5"/>
+        <namedColor name="Star">
+            <color red="0.72500002384185791" green="0.52399998903274536" blue="0.046000000089406967" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

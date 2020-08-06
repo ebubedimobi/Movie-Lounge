@@ -46,18 +46,17 @@ struct MoviesCacheManager {
     
     private func emptyDataBase(){
         let realm = try! Realm()
-        do{
-            
-            try realm.write{
+            do{
                 
-                realm.delete(realm.objects(MoviesCacheData.self))
+                try realm.write{
+                    
+                    realm.delete(realm.objects(MoviesCacheData.self))
+                }
+                
+            }catch{
+                print("error while deleting")
             }
             
-        }catch{
-            print("error while deleting")
-        }
-        
-        
     }
     
     

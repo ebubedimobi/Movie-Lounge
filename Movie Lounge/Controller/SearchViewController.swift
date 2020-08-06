@@ -21,6 +21,20 @@ class SearchViewController: UIViewController {
         collectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: Constants.cellIdentifier)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        removeKeyBoard()
+        
+    }
+    
+    private func removeKeyBoard(){
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        
+    }
+    
     
     
 }
@@ -44,18 +58,29 @@ extension SearchViewController: UICollectionViewDataSource {
             cell.image.kf.indicatorType = .activity
             cell.image.kf.setImage(
                 with: imageUrl,
-                //placeholder: UIImage(named: "logo"),
                 options: [
                     .scaleFactor(UIScreen.main.scale),
                     .transition(.fade(0.5)),
                     .cacheOriginalImage
             ])
-
+            
         }
         
         return cell
         
     }
+}
+
+
+//MARK: - UICollectionViewDelegate Methods
+extension SearchViewController: UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: Constants.Segue.searchToInfo, sender: self)
+        
+    }
+    
+    
 }
 
 //MARK: - UISearchBarDelegate
@@ -71,6 +96,10 @@ extension SearchViewController: UISearchBarDelegate{
             if name.contains(" "){
                 
                 name = self.removeSpaces(in: name )
+            }
+            
+            DispatchQueue.main.async {
+                searchBar.endEditing(true)
             }
             
             let searchMoviesService = SearchMoviesService()
@@ -94,4 +123,23 @@ extension SearchViewController: UISearchBarDelegate{
         
         return result
     }
+}
+
+//MARK: - Segues and Navigation
+extension SearchViewController{
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.Segue.searchToInfo{
+            
+            let InfoVc = segue.destination as! InformationViewController
+            if let index = collectionView.indexPathsForSelectedItems?[0].row, let movie = moviesData?.results[index]{
+                let infoData = InformationData(id: movie.id, vote_average: movie.vote_average, title: movie.title, release_date: movie.release_date, overview: movie.overview, poster_path: movie.poster_path, isSaved: false, saveLocation: nil)
+                
+                InfoVc.informationData = infoData
+            }
+            
+        }
+    }
+    
+    
 }
